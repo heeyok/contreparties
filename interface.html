@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Saisie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulaire de Saisie</h1>
+        
+        <form id="mainForm">
+            <div class="form-group">
+                <label for="ref_contrepartie">Référence Contrepartie:</label>
+                <input type="text" id="ref_contrepartie" name="ref_contrepartie" required placeholder="Entrez la référence">
+            </div>
+            
+            <div class="form-group">
+                <label for="client">Client:</label>
+                <input type="text" id="client" name="client" required placeholder="Nom du client">
+            </div>
+            
+            <div class="form-group">
+                <label for="emplacement">Emplacement:</label>
+                <input type="text" id="emplacement" name="emplacement" required placeholder="Localisation">
+            </div>
+            
+            <div class="form-group">
+                <label for="quantite">Quantité:</label>
+                <input type="number" id="quantite" name="quantite" required placeholder="Nombre d'unités" min="1">
+            </div>
+            
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Traitement des données ici
+            alert('Formulaire soumis avec succès!');
+            // this.reset(); // Décommentez pour réinitialiser le formulaire après soumission
+        });
+    </script>
+</body>
+</html>
+<link rel="stylesheet" href="style.css">
